@@ -1,7 +1,5 @@
 package com.gft;
 
-import java.util.Arrays;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -10,15 +8,13 @@ import org.springframework.context.ApplicationContext;
 public class Main {
 
     public static void main(String[] args) {
+        System.out.println("################:  "+System.getProperties().getProperty("starter.property.file"));
+        System.getProperties().setProperty("starter.property.file", "starter_dev.properties");
         ApplicationContext ctx = SpringApplication.run(Main.class, args);
+        PropertiesConfig properties = ctx.getBean(PropertiesConfig.class);
 
-        System.out.println("Let's inspect the beans provided by Spring Boot:");
-
-        String[] beanNames = ctx.getBeanDefinitionNames();
-        Arrays.sort(beanNames);
-        for (String beanName : beanNames) {
-            System.out.println(beanName);
-        }
+        System.out.println(properties.getProperty("test.property"));
+        System.out.println("dupsko");
     }
 
 }
