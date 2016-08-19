@@ -11,7 +11,7 @@ public class Main {
     private static final String PROPERTY_FILE_NAME = "starter.property.file";
     private static final String ENV_SHORT_SWITCH = "env";
     private static final String ENV_LONG_SWITCH = "environment";
-    private static final String ARGUMENT_NAME = "environment";
+    private static final String ARGUMENT_NAME = "environment";//
 
     public static void main(String[] args) throws Exception {
         loadProperConfiguration(args);
